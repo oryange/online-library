@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../components/header';
+import BookList from '../components/BookList';
 
 function Home() {
-  return (<div>
-    <h1>Home</h1>
+  return (
+  <div>
+    <Header />
+    <BookList />
   </div>)
 }
 
