@@ -7,11 +7,14 @@ function BookList() {
   const { booksByCategories } = useContext(bookContext);
   if(booksByCategories)
   return(
-    <div>
+    <div className="conteiner-list">
       {
        Object.entries(booksByCategories).map(([category, books]) => <div>
           <h1>{ category }</h1>
-          { Object.values(books).map((book) => <BookCard book={book}/>)}
+          <div >
+          { books.map((book) => <BookCard book={book}/>)
+          }
+          </div>
        </div>)
       }
     </div>
