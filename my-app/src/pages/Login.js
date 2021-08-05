@@ -12,7 +12,7 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     sucessLogin(login, password);
-    history.push('/');
+    history.push('/home');
   }
 
   return (
