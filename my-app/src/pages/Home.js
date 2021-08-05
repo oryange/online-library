@@ -10,9 +10,7 @@ function Home() {
   <>
     <Header />
     {
-     Object.keys(filteredBooks).length > 0 ?
-      <FilteredList /> :
-      <BookList />
+    filteredBooks.items ? <FilteredList /> : <BookList />
     }
   </>
   );

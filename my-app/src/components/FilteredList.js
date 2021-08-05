@@ -7,15 +7,11 @@ function FilteredList() {
   return(
     <div className="conteiner-list">
         <h3>TESTE DE RENDERI</h3>
-      {
-       Object.entries(filteredBooks).map(([category, books]) => <div>
-          <h1>{ category }</h1>
-          <div >
-          { books.map((book) => <BookCard book={book}/>)
-          }
-          </div>
+      {/* {
+       Object.values(filteredBooks).map(({items}) => <div>
+          { items.map((book) => <BookCard book={book}/>) }
        </div>)
-      }
+      } */}
     </div>
   );
 }
