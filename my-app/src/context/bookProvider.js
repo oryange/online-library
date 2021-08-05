@@ -13,8 +13,7 @@ function BookProvider({children}) {
     action: [],
     juvenile: [],
   })
-  const [filterText, setfilterText] = useState('');
-  
+   
   async function filterBooks(query) {
     const books = await fetchBooks(query);
     setFilteredBooks(books);
@@ -30,7 +29,7 @@ function BookProvider({children}) {
 
   return (
     <BookContext.Provider
-      value={{filteredBooks, booksByCategories, filterText, setfilterText, filterBooks}}
+      value={{filteredBooks, booksByCategories, filterBooks}}
     >
       { children }
     </BookContext.Provider>

@@ -10,8 +10,8 @@ function Home() {
   <>
     <Header />
     {
-      filteredBooks.length > 0 ?
-      <FilteredList filteredBooks={filteredBooks} /> :
+     Object.keys(filteredBooks).length > 0 ?
+      <FilteredList /> :
       <BookList />
     }
   </>

@@ -1,13 +1,21 @@
+import React, { useContext } from 'react';
 import BookCard from "./bookCard";
-function FilteredList({filteredBooks}) {
+import BookContext from '../context/bookContext';
+
+function FilteredList() {
+  const { filteredBooks } = useContext(BookContext);
   return(
-    <div className="filtered-list">
-      <h3>Search</h3>
-      <div className="conteiner-list">
-        {
-        filteredBooks.map((book) => <BookCard book={book}/>)
-        }
-      </div>
+    <div className="conteiner-list">
+        <h3>TESTE DE RENDERI</h3>
+      {
+       Object.entries(filteredBooks).map(([category, books]) => <div>
+          <h1>{ category }</h1>
+          <div >
+          { books.map((book) => <BookCard book={book}/>)
+          }
+          </div>
+       </div>)
+      }
     </div>
   );
 }
