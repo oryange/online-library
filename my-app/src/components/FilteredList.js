@@ -1,19 +1,17 @@
-import React, { useContext } from 'react';
-import BookCard from "./bookCard";
+import React, {useContext} from 'react';
 import BookContext from '../context/bookContext';
+import BookCard from './bookCard';
+
 
 function FilteredList() {
   const { filteredBooks } = useContext(BookContext);
+ 
   return(
     <div className="conteiner-list">
-        <h3>TESTE DE RENDERI</h3>
-      {/* {
-       Object.values(filteredBooks).map(({items}) => <div>
-          { items.map((book) => <BookCard book={book}/>) }
-       </div>)
-      } */}
-    </div>
-  );
+        <h3>Search Results</h3>
+      {<BookCard book={filteredBooks}/>}
+    </div>       
+    );
 }
 
 export default FilteredList;
