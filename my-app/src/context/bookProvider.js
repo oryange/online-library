@@ -3,6 +3,7 @@ import BookContext from './bookContext';
 import mockActions from '../data/mockActions';
 import mockFictions from '../data/mockFictions';
 import mockJuvenile from '../data/mockJuvenile';
+import fetchBooks from '../services/bookServices';
 
 function BookProvider({children}) {
 
@@ -14,6 +15,11 @@ function BookProvider({children}) {
   })
   const [filterText, setfilterText] = useState('');
   
+  async function filterBooks(query) {
+    const books = await fetchBooks(query);
+    setFilteredBooks(books);
+  }
+
   useEffect(()=> {
     setBookByCategories({
       fiction: mockFictions,
@@ -24,7 +30,7 @@ function BookProvider({children}) {
 
   return (
     <BookContext.Provider
-      value={{filteredBooks, booksByCategories, filterText, setfilterText}}
+      value={{filteredBooks, booksByCategories, filterText, setfilterText, filterBooks}}
     >
       { children }
     </BookContext.Provider>
