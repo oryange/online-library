@@ -1,5 +1,6 @@
+import './custom.scss';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import BookProvider from './context/bookProvider';
 import UserProvider from './context/userProvider';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';

@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../context/userContext';
 import imgUser  from '../images/user.png';
 import imgIcon from '../images/icon.png';
+import imgBack from '../images/back.png';
 import { FormControl } from 'react-bootstrap';
 import BookContext from '../context/bookContext';
 
-function Header() {
+function Header(props) {
   const { login } = useContext(UserContext);
   const { filterBooks } = useContext(BookContext);
   const [ showFilter, setFilter ] = useState(false);
@@ -28,13 +30,20 @@ function Header() {
         aria-describedby="basic-addon1"
       />)
       : (<div>
-        <img src={ imgUser } alt="user" width="80"/>
-        <span>{ login }</span>
+        <img className="image-user" src={ imgUser } alt="user" width="80"/>
+        <span className="user-login">{ login }</span>
       </div>)
     }
-    <button onClick={ toggleFilter } type="button">
-      <img src={ imgIcon } alt="search" width="40"/>
+    <button
+      onClick={ toggleFilter }
+      type="button"
+      className='button-search'
+    >
+      <img src={ imgIcon } alt="search" className="icon"/>
     </button>
+    <Link to="/">
+      <img src={ imgBack } alt="back" className="icon"></img>
+    </Link>
   </header>
   );
 }

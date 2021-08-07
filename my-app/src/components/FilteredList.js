@@ -8,7 +8,7 @@ function FilteredList() {
  
   return(
     <div className="conteiner-list">
-        <h3>Search Results</h3>
+        <h3 className="conteiner-list-h1">Search Results</h3>
       {<BookCard book={filteredBooks}/>}
     </div>       
     );

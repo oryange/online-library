@@ -9,9 +9,9 @@ function BookProvider({children}) {
 
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [booksByCategories, setBookByCategories] = useState({
-    fiction: [],
-    action: [],
-    juvenile: [],
+    Fiction: [],
+    Action: [],
+    Juvenile: [],
   })
    
   async function filterBooks(query) {
@@ -21,9 +21,9 @@ function BookProvider({children}) {
 
   useEffect(()=> {
     setBookByCategories({
-      fiction: mockFictions,
-      action: mockActions,
-      juvenile: mockJuvenile,
+      Fiction: mockFictions,
+      Action: mockActions,
+      Juvenile: mockJuvenile,
     })
   }, [])
 

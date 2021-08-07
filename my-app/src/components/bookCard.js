@@ -5,11 +5,11 @@ function BookCard(props) {
   const { book: { items } } = props;
 
   return(
-    <div className="book-card">
+    <div className="book-cards">
     { items.map(({volumeInfo: {title, subtitile, pageCount, publishedDate,description, imageLinks : {thumbnail ='https://faturealto.com/wp-content/uploads/2018/10/Capa-3D-Ebook-2-300x300.png'} = {}}}) => (
-      <div>
+      <div className="book-card">
         <img src={thumbnail} alt={title}/>
-        <Link to={{
+        <Link className="book-card-text" to={{
             pathname:"/information",
             state:{
               thumbnail,

@@ -4,14 +4,14 @@ function information(props) {
   const {location: {state:
     {thumbnail, title, subtitile, pageCount,publishedDate, description}}} = props;
   return(
-    <div>
+    <div className="conteiner-list-info">
       <img src={thumbnail} alt={title}/>
       <h2>{title}</h2>
       <p>{subtitile}</p>
       <p>{description}</p>
       <p>Published Date: {publishedDate}</p>
       <p>Page Count: {pageCount}</p>
-      <Link to='/home'>Back</Link>
+      <Link className="button-back" to='/home'>Back</Link>
     </div>
   )
 }
