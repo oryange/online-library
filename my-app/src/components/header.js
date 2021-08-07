@@ -25,7 +25,8 @@ function Header(props) {
   return (
   <header>
     {showFilter ? 
-      (<FormControl  
+      (<FormControl
+        size="lg"
         onChange={({ target })=> setFilterText(target.value)}
         aria-describedby="basic-addon1"
       />)
